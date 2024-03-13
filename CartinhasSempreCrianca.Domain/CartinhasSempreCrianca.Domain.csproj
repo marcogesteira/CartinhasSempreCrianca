@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Cartinha\" />
-    <Folder Include="Apadrinhamento\" />
-  </ItemGroup>
-
 </Project>
