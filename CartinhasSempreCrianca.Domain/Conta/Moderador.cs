@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CartinhasSempreCrianca.Domain.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,9 @@ namespace CartinhasSempreCrianca.Domain.Conta
 
         public Moderador(string nome, string email, string senha) : base(nome, email, senha)
         {
-            if (base.ValidaEmail(email) == false)
+            if (!email.ValidaEmail())
                 throw new ArgumentException("Favor inserir um e-mail válido");
+            
             Id = Guid.NewGuid();
             Ativo = true; 
         }

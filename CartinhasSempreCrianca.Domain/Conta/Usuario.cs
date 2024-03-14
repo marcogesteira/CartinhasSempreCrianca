@@ -19,19 +19,5 @@ namespace CartinhasSempreCrianca.Domain.Conta
             Email = email;
             Senha = senha;
         }
-
-        public bool ValidaEmail(string email)
-        {
-            string padrao = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-
-            if (Regex.IsMatch(email, padrao)) 
-            { 
-                return true; 
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }
