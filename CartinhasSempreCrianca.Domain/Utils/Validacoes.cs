@@ -9,7 +9,7 @@ namespace CartinhasSempreCrianca.Domain.Utils
 {
     public static class Validacoes
     {
-        public static bool ValidaEmail(this string email)
+        public static bool ValidarEmail(this string email)
         {
             string padrao = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
 

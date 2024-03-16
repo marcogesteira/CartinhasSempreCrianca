@@ -13,14 +13,5 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public int Numero { get; set; }
         public DateTime Ano { get; set; }
         public string Desenho { get; set; }
-
-        public Cartinha(Guid id, bool disponivel, int numero, DateTime ano, string desenho)
-        {
-            Id = id;
-            Disponivel = disponivel;
-            Numero = numero;
-            Ano = ano;
-            Desenho = desenho;
-        }
     }
 }

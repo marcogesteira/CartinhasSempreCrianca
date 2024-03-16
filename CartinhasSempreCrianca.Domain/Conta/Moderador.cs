@@ -9,23 +9,14 @@ namespace CartinhasSempreCrianca.Domain.Conta
 {
     internal class Moderador : Usuario
     {
-        public Guid Id { get; private set; }
-        public bool Ativo { get; private set; }
+        public Guid Id { get; set; }
+        public bool Ativo { get; set; }
 
         public Moderador(string nome, string email, string senha) : base(nome, email, senha)
         {
-            if (!email.ValidaEmail())
-                throw new ArgumentException("Favor inserir um e-mail válido");
-            
-            Id = Guid.NewGuid();
+            if (!email.ValidarEmail())
+                throw new ArgumentException("E-mail inválido");
             Ativo = true; 
-        }
-
-        //Falta incluir lógica para inativar e Ativar
-        public void InativaModerador(Guid id)
-        {
-
-        }
-        
+        }        
     }
 }
