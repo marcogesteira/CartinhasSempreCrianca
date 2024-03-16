@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CartinhasSempreCrianca.Domain.Conta
 {
-    internal class Padrinho : Usuario
+    public class Padrinho : Usuario
     {
         public Guid Id { get; set; }
         public string Telefone { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CartinhasSempreCrianca.Domain.Apadrinhamento
 {
-    internal class Apadrinhamento
+    public class Apadrinhamento
     {
         public Guid Id { get; set; }
         public DateTime Data { get; set; }
@@ -15,6 +15,13 @@ namespace CartinhasSempreCrianca.Domain.Apadrinhamento
         public Padrinho Padrinho { get; set; }
         public List<Cartinha.Cartinha> Cartinhas { get; set; } = new List<Cartinha.Cartinha>();
         public List<LocalDeRecolhimento> LocaisDeRecolhimento { get; set; } = new List<LocalDeRecolhimento>();
+
+        public Apadrinhamento(DateTime data, DateTime prazo, Padrinho padrinho)
+        {
+            Data = data;
+            Prazo = prazo;
+            Padrinho = padrinho;
+        }
 
         public void AdicionarCartinha(Cartinha.Cartinha cartinha)
         {

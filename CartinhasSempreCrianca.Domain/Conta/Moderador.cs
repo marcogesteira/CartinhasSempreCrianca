@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CartinhasSempreCrianca.Domain.Conta
 {
-    internal class Moderador : Usuario
+    public class Moderador : Usuario
     {
         public Guid Id { get; set; }
         public bool Ativo { get; set; }

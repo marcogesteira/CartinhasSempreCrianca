@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CartinhasSempreCrianca.Domain.Cartinha
 {
-    internal class Crianca
+    public class Crianca
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
@@ -14,6 +14,14 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public string Pedido { get; set; }
         public bool Ativo { get; set; }
         public List<Cartinha> Cartinhas { get; set; } = new List<Cartinha>();
+
+        public Crianca(string nome, int idade, string pedido)
+        {
+            Nome = nome;
+            Idade = idade;
+            Pedido = pedido;
+            Ativo = true;
+        }
 
         public void AdicionarCartinha(Cartinha cartinha)
         {

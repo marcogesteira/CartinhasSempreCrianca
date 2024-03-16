@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace CartinhasSempreCrianca.Domain.Conta
 {
-    abstract internal class Usuario
+    abstract public class Usuario
     {
         public string Nome { get; set; }
         public string Email { get; set; }
