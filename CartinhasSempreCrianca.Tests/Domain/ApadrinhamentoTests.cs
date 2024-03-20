@@ -16,9 +16,9 @@ namespace CartinhasSempreCrianca.Tests.Domain
         public void Contrutor_TestandoIncializacaoQuandoTiverValor_DeveCriarApadrinhamentoComSucesso()
         {
             //Arrange
-            var padrinho = new Padrinho("João", "teste@test.com", "Senha123", "2199998-9888", true);
-            var cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
-            var localDeRecolhimento = new LocalDeRecolhimento("Rua das Couves, 35", "Centro", "Joaquim", "2199988-9888", "Das 14h às 18h");
+            Padrinho padrinho = new Padrinho("João", "teste@test.com", "Senha123", "2199998-9888", true);
+            Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
+            LocalDeRecolhimento localDeRecolhimento = new LocalDeRecolhimento("Rua das Couves, 35", "Centro", "Joaquim", "2199988-9888", "Das 14h às 18h");
 
             //Act
             var apadrinhamento = new Apadrinhamento(DateTime.Parse("05/07/2024"), DateTime.Parse("10/12/2024"), padrinho);
