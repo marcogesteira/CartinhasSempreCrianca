@@ -11,15 +11,13 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
-        public string Pedido { get; set; }
         public bool Ativo { get; set; }
         public List<Cartinha> Cartinhas { get; set; } = new List<Cartinha>();
 
-        public Crianca(string nome, int idade, string pedido)
+        public Crianca(string nome, int idade)
         {
             Nome = nome;
             Idade = idade;
-            Pedido = pedido;
             Ativo = true;
         }
 

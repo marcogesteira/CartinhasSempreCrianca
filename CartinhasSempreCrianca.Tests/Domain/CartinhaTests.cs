@@ -12,7 +12,7 @@ namespace CartinhasSempreCrianca.Tests.Domain
         [Fact]
         public void DeveCriarCartinhaComSucesso()
         {
-            Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
+            Cartinha cartinha = new Cartinha("Carrinho", 1050, DateTime.Now, "www.test.com");
         }
     }
 }

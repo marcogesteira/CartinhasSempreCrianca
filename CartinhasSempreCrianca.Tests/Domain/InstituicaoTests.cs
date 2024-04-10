@@ -13,8 +13,8 @@ namespace CartinhasSempreCrianca.Tests.Domain
         public void DeveCriarInstituicaoComSucesso()
         {
             //Arrange
-            Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
-            Crianca crianca = new Crianca("João", 6, "Carrinho");
+            Cartinha cartinha = new Cartinha("Carrinho", 1050, DateTime.Now, "www.test.com");
+            Crianca crianca = new Crianca("João", 6);
             Instituicao instituicao = new Instituicao("Creche Feliz", new Diretor());
 
             //Act

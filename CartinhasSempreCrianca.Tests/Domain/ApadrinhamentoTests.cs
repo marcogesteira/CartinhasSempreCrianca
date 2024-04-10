@@ -17,7 +17,7 @@ namespace CartinhasSempreCrianca.Tests.Domain
         {
             //Arrange
             Padrinho padrinho = new Padrinho("João", "teste@test.com", "Senha123", "2199998-9888", true);
-            Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
+            Cartinha cartinha = new Cartinha("Carrinho", 1050, DateTime.Now, "www.test.com");
             LocalDeRecolhimento localDeRecolhimento = new LocalDeRecolhimento("Rua das Couves, 35", "Centro", "Joaquim", "2199988-9888", "Das 14h às 18h");
 
             //Act
@@ -42,8 +42,8 @@ namespace CartinhasSempreCrianca.Tests.Domain
         {
             //Arrange
             Padrinho padrinho = new Padrinho("João", "teste@test.com", "Senha123", "2199998-9888", true);
-            Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
-            Cartinha cartinha2 = new Cartinha(3090, DateTime.Now, "www.test2.com");
+            Cartinha cartinha = new Cartinha("Carrinho", 1050, DateTime.Now, "www.test.com");
+            Cartinha cartinha2 = new Cartinha("Boneco", 3090, DateTime.Now, "www.test2.com");
             LocalDeRecolhimento localDeRecolhimento = new LocalDeRecolhimento("Rua das Couves, 35", "Centro", "Joaquim", "2199988-9888", "Das 14h às 18h");
 
             //Act
@@ -69,7 +69,7 @@ namespace CartinhasSempreCrianca.Tests.Domain
         {
             //Arrange
             Padrinho padrinho = new Padrinho("João", "teste@test.com", "Senha123", "2199998-9888", true);
-            Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
+            Cartinha cartinha = new Cartinha("Carrinho", 1050, DateTime.Now, "www.test.com");
             LocalDeRecolhimento localDeRecolhimento = new LocalDeRecolhimento("Rua das Couves, 35", "Centro", "Joaquim", "2199988-9888", "Das 14h às 18h");
             LocalDeRecolhimento localDeRecolhimento2 = new LocalDeRecolhimento("Rua das Marrecas, 43", "Sul", "Joãozinho", "2198889-8999", "Das 08h às 18h");
 
