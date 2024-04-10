@@ -15,7 +15,7 @@ namespace CartinhasSempreCrianca.Tests.Domain
             //Arrange
             Cartinha cartinha = new Cartinha(1050, DateTime.Now, "www.test.com");
             Crianca crianca = new Crianca("João", 6, "Carrinho");
-            Instituicao instituicao = new Instituicao("Creche Feliz");
+            Instituicao instituicao = new Instituicao("Creche Feliz", new Diretor());
 
             //Act
             crianca.AdicionarCartinha(cartinha);
