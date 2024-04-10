@@ -18,8 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\Apadrinhamento\" />
-    <Folder Include="Mapping\Conta\" />
     <Folder Include="Repository\" />
   </ItemGroup>
 
