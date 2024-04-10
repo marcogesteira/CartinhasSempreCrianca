@@ -11,12 +11,14 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public bool Ativo { get; set; }
+        public Diretor Diretor { get; set; }
         public List<Crianca> Criancas { get; set; } = new List<Crianca>();
 
-        public Instituicao(string nome)
+        public Instituicao(string nome, Diretor diretor)
         {
             Nome = nome;
             Ativo = true;
+            Diretor = diretor;
         }
 
         public void AdicionarCrianca(Crianca crianca)

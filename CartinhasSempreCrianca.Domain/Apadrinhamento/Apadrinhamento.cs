@@ -30,11 +30,14 @@ namespace CartinhasSempreCrianca.Domain.Apadrinhamento
             Padrinho = padrinho;
         }
 
-        public void AdicionarCartinha(Cartinha.Cartinha cartinha)
+        public void ApadrinharCartinha(Cartinha.Cartinha cartinha)
         {
+            if (!cartinha.Disponivel)
+                throw new Exception("Cartinha indisponível para apadrinhamento");
+
             this.Cartinhas.Add(cartinha);
         }
-        public void AdicionarLocal(LocalDeRecolhimento locais)
+        public void EscolherLocal(LocalDeRecolhimento locais)
         {
             this.LocaisDeRecolhimento.Add(locais);
         }

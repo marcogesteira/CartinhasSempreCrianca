@@ -22,8 +22,8 @@ namespace CartinhasSempreCrianca.Tests.Domain
 
             //Act
             var apadrinhamento = new Apadrinhamento(DateTime.Parse("05/07/2024"), DateTime.Parse("10/12/2024"), padrinho);
-            apadrinhamento.AdicionarCartinha(cartinha);
-            apadrinhamento.AdicionarLocal(localDeRecolhimento);
+            apadrinhamento.ApadrinharCartinha(cartinha);
+            apadrinhamento.EscolherLocal(localDeRecolhimento);
 
             //Assert
             Assert.NotNull(apadrinhamento);
@@ -48,9 +48,9 @@ namespace CartinhasSempreCrianca.Tests.Domain
 
             //Act
             Apadrinhamento apadrinhamento = new Apadrinhamento(DateTime.Parse("05/07/2024"), DateTime.Parse("10/12/2024"), padrinho);
-            apadrinhamento.AdicionarCartinha(cartinha);
-            apadrinhamento.AdicionarCartinha(cartinha2);
-            apadrinhamento.AdicionarLocal(localDeRecolhimento);
+            apadrinhamento.ApadrinharCartinha(cartinha);
+            apadrinhamento.ApadrinharCartinha(cartinha2);
+            apadrinhamento.EscolherLocal(localDeRecolhimento);
 
             //Assert
             Assert.NotNull(apadrinhamento);
@@ -75,9 +75,9 @@ namespace CartinhasSempreCrianca.Tests.Domain
 
             //Act
             Apadrinhamento apadrinhamento = new Apadrinhamento(DateTime.Parse("05/07/2024"), DateTime.Parse("10/12/2024"), padrinho);
-            apadrinhamento.AdicionarCartinha(cartinha);
-            apadrinhamento.AdicionarLocal(localDeRecolhimento);
-            apadrinhamento.AdicionarLocal(localDeRecolhimento2);
+            apadrinhamento.ApadrinharCartinha(cartinha);
+            apadrinhamento.EscolherLocal(localDeRecolhimento);
+            apadrinhamento.EscolherLocal(localDeRecolhimento2);
 
             //Assert
             Assert.NotNull(apadrinhamento);
