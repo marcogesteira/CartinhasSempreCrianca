@@ -21,7 +21,7 @@ namespace CartinhasSempreCrianca.Repository.Mapping.Cartinha
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Ativo).IsRequired();
 
-            builder.HasOne<Diretor>(x => x.Diretor).WithOne().OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne<Diretor>(x => x.Diretor);
 
             builder.HasMany<Crianca>(x => x.Criancas).WithOne().OnDelete(DeleteBehavior.Cascade);
 

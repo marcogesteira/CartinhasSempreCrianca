@@ -9,7 +9,6 @@ namespace CartinhasSempreCrianca.Domain.Conta
 {
     public class Padrinho : Usuario
     {
-        public Guid Id { get; set; }
         public string Telefone { get; set; }
         public bool Newsletter { get; set; }
         public bool BomPadrinho { get; set; }

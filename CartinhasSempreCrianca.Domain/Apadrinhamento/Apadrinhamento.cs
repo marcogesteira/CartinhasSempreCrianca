@@ -23,6 +23,11 @@ namespace CartinhasSempreCrianca.Domain.Apadrinhamento
 
         //}
 
+        public Apadrinhamento()
+        {
+            
+        }
+
         public Apadrinhamento(DateTime data, DateTime prazo, Padrinho padrinho) //: base()
         {
             Data = data;

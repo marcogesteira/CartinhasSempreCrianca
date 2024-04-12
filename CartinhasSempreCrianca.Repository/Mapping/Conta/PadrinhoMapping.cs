@@ -15,12 +15,8 @@ namespace CartinhasSempreCrianca.Repository.Mapping.Conta
         {
             builder.ToTable(nameof(Padrinho));
 
-            builder.HasKey(x => x.Id);
+            builder.HasBaseType<Usuario>();
 
-            builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x => x.Nome).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Email).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Senha).IsRequired().HasMaxLength(150);
             builder.Property(x => x.Telefone).IsRequired().HasMaxLength(50);
             builder.Property(x => x.Newsletter).IsRequired();
             builder.Property(x => x.BomPadrinho).IsRequired();

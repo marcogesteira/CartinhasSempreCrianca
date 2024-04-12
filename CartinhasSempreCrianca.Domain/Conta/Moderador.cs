@@ -9,7 +9,6 @@ namespace CartinhasSempreCrianca.Domain.Conta
 {
     public class Moderador : Usuario
     {
-        public Guid Id { get; set; }
         public bool Ativo { get; set; }
 
         public Moderador(string nome, string email, string senha) : base(nome, email, senha)

@@ -9,18 +9,14 @@ using System.Threading.Tasks;
 
 namespace CartinhasSempreCrianca.Repository.Mapping.Conta
 {
-    public class ModeradorRepository : IEntityTypeConfiguration<Moderador>
+    public class ModeradorMapping : IEntityTypeConfiguration<Moderador>
     {
         public void Configure(EntityTypeBuilder<Moderador> builder)
         {
             builder.ToTable(nameof(Moderador));
 
-            builder.HasKey(x => x.Id);
+            builder.HasBaseType<Usuario>();
 
-            builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x => x.Nome).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Email).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.Senha).IsRequired().HasMaxLength(150);
             builder.Property(x => x.Ativo).IsRequired();
 
         }

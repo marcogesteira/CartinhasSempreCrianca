@@ -14,6 +14,11 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public Diretor Diretor { get; set; }
         public List<Crianca> Criancas { get; set; } = new List<Crianca>();
 
+        public Instituicao()
+        {
+            
+        }
+
         public Instituicao(string nome, Diretor diretor)
         {
             Nome = nome;
