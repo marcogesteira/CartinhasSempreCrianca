@@ -14,6 +14,11 @@ namespace CartinhasSempreCrianca.Domain.Conta
         public bool BomPadrinho { get; set; }
         public bool Ativo { get; set; }
 
+        public Padrinho()
+        {
+            
+        }
+
         public Padrinho(string nome, string email, string senha, string telefone, bool newsletter) : base(nome, email, senha)
         {
             if (!email.ValidarEmail())

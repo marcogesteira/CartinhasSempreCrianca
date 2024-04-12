@@ -14,6 +14,11 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public bool Ativo { get; set; }
         public List<Cartinha> Cartinhas { get; set; } = new List<Cartinha>();
 
+        public Crianca()
+        {
+            
+        }
+
         public Crianca(string nome, int idade)
         {
             Nome = nome;

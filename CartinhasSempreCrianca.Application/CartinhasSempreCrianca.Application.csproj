@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Apadrinhamento\Dto\" />
+    <Folder Include="Conta\Dto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CartinhasSempreCrianca.Domain\CartinhasSempreCrianca.Domain.csproj" />
+    <ProjectReference Include="..\CartinhasSempreCrianca.Repository\CartinhasSempreCrianca.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

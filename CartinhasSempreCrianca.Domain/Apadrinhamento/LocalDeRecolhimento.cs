@@ -16,6 +16,11 @@ namespace CartinhasSempreCrianca.Domain.Apadrinhamento
         public string Horario { get; set; }
         public bool Ativo { get; set; }
 
+        public LocalDeRecolhimento()
+        {
+            
+        }
+
         public LocalDeRecolhimento(string endereco, string regiao, string nome, string telefone, string horario)
         {
             Endereco = endereco;

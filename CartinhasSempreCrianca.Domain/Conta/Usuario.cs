@@ -15,6 +15,10 @@ namespace CartinhasSempreCrianca.Domain.Conta
         public string Email { get; set; }
         public string Senha { get; set; }
 
+        protected Usuario()
+        {
+        }
+
         protected Usuario(string nome, string email, string senha)
         {
             Nome = nome;

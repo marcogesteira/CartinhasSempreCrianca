@@ -11,6 +11,11 @@ namespace CartinhasSempreCrianca.Domain.Conta
     {
         public bool Ativo { get; set; }
 
+        public Moderador() : base()
+        {
+            
+        }
+
         public Moderador(string nome, string email, string senha) : base(nome, email, senha)
         {
             if (!email.ValidarEmail())
