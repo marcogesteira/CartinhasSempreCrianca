@@ -1,4 +1,6 @@
 using CartinhasSempreCrianca.Repository;
+using CartinhasSempreCrianca.Repository.Repository;
+using CartinhasSempreCrianca.Application.Cartinha;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,12 @@ builder.Services.AddDbContext<CartinhasSempreCriancaContext>(c =>
     c.UseSqlServer(builder.Configuration.GetConnectionString("CartinhasConnection"));
 
 });
+
+//Repositories
+builder.Services.AddScoped<CartinhaRepository>();
+
+//Services
+builder.Services.AddScoped<CartinhaService>();
 
 var app = builder.Build();
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CartinhasSempreCrianca.Application.Cartinha
 {
-    internal class CartinhaService
+    public class CartinhaService
     {
         private CartinhaRepository cartinhaRepository { get; set; }
 
@@ -31,6 +31,19 @@ namespace CartinhasSempreCrianca.Application.Cartinha
             var cartinha = this.cartinhaRepository.GetById(id);
             
             return this.CartinhaParaCartinhaDto(cartinha);
+        }
+
+        public IEnumerable<CartinhaDto> Obter()
+        {
+            var cartinhas = this.cartinhaRepository.GetAll();
+            List<CartinhaDto> dto = new List<CartinhaDto>();
+
+            foreach (var item  in cartinhas)
+            {
+                dto.Add(this.CartinhaParaCartinhaDto(item));
+            }
+
+            return dto;
         }
 
         public CartinhaDto Atualizar(CartinhaDto dto)
