@@ -96,5 +96,16 @@ namespace CartinhasSempreCrianca.Api.Controllers
                 return NotFound();
             return Ok(result);
         }
+        [HttpPost("{id}/criancas/{idCrianca}/cartinhas")]
+        public IActionResult AssociarCartinha([FromBody] CartinhaDto dto)
+        {
+            if (ModelState.IsValid == false)
+                return BadRequest();
+
+            var result = this._instituicaoService.AssociarCartinha(dto);
+
+            return Created($"/criancas/{result.CriancaId}/cartinhas/{result.Id}", result);
+        }
+
     }
 }
