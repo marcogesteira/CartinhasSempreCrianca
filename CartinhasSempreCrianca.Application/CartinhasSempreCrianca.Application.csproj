@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Apadrinhamento\Dto\" />
     <Folder Include="Conta\Dto\" />
   </ItemGroup>
 
