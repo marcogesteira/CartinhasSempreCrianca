@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Conta\Dto\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CartinhasSempreCrianca.Domain\CartinhasSempreCrianca.Domain.csproj" />
     <ProjectReference Include="..\CartinhasSempreCrianca.Repository\CartinhasSempreCrianca.Repository.csproj" />
   </ItemGroup>

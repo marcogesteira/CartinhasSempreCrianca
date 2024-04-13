@@ -3,6 +3,7 @@ using CartinhasSempreCrianca.Repository.Repository;
 using CartinhasSempreCrianca.Application.Cartinha;
 using Microsoft.EntityFrameworkCore;
 using CartinhasSempreCrianca.Application.Apadrinhamento;
+using CartinhasSempreCrianca.Application.Conta;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,10 +27,13 @@ builder.Services.AddScoped<CriancaRepository>();
 builder.Services.AddScoped<CartinhaRepository>();
 builder.Services.AddScoped<ApadrinhamentoRepository>();
 builder.Services.AddScoped<LocalDeRecolhimentoRepository>();
+builder.Services.AddScoped<PadrinhoRepository>();
+builder.Services.AddScoped<ModeradorRepository>();
 
 //Services
 builder.Services.AddScoped<InstituicaoService>();
 builder.Services.AddScoped<ApadrinhamentoService>();
+builder.Services.AddScoped<UsuarioService>();
 
 var app = builder.Build();
 
