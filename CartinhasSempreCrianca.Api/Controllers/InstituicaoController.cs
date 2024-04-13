@@ -17,7 +17,7 @@ namespace CartinhasSempreCrianca.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetInstituicoes() 
+        public IActionResult GetInstituicoes()
         {
             var result = this._instituicaoService.Obter();
             return Ok(result);
@@ -44,6 +44,57 @@ namespace CartinhasSempreCrianca.Api.Controllers
             var result = this._instituicaoService.Criar(dto);
 
             return Created($"/instituicao/{result.Id}", result);
+        }
+
+        [HttpGet("{idInstituicao}/criancas")]
+        public IActionResult ObterCriancas(Guid idInstituicao)
+        {
+            var result = this._instituicaoService.ObterCrianca(idInstituicao);
+
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+
+        [HttpGet("{idInstituicao}/criancas/{id}")]
+        public IActionResult ObterCriancaPorId(Guid idInstituicao, Guid id)
+        {
+            var result = this._instituicaoService.ObterCriancaPorId(idInstituicao, id);
+
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+
+        [HttpPost("{id}/criancas")]
+        public IActionResult AssociarCrianca([FromBody] CriancaDto dto)
+        {
+            if (ModelState.IsValid == false)
+                return BadRequest();
+
+            var result = this._instituicaoService.AssociarCrianca(dto);
+
+            return Created($"/instituicao/{result.InstituicaoId}/criancas/{result.Id}", result);
+        }
+
+        [HttpGet("{idCrianca}/cartinhas")]
+        public IActionResult ObterCartinhas(Guid idCrianca)
+        {
+            var result = this._instituicaoService.ObterCartinha(idCrianca);
+
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+
+        [HttpGet("{idCrianca}/cartinhas/{id}")]
+        public IActionResult ObterCartinhaPorId(Guid idCrianca, Guid id)
+        {
+            var result = this._instituicaoService.ObterCartinhaPorId(idCrianca, id);
+
+            if (result == null)
+                return NotFound();
+            return Ok(result);
         }
     }
 }

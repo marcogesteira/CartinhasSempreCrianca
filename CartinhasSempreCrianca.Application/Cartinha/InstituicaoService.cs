@@ -85,6 +85,70 @@ namespace CartinhasSempreCrianca.Application.Cartinha
             return result;
         }
 
+        public IEnumerable<CriancaDto> ObterCrianca(Guid idInstituicao)
+        {
+            var instituicao = this.InstituicaoRepository.GetById(idInstituicao);
+
+            if (instituicao == null)
+                throw new Exception("Instituição não encontrada");
+
+            var result = new List<CriancaDto>();
+
+            foreach (var item in instituicao.Criancas)
+            {
+                result.Add(this.CriancaParaCriancaDto(item));
+            }
+            return result;
+        }
+
+        public CriancaDto ObterCriancaPorId(Guid idInstituicao, Guid id)
+        {
+            var instituicao = this.InstituicaoRepository.GetById(idInstituicao);
+
+            if (instituicao == null)
+                throw new Exception("Instituição não encontrada");
+
+            var crianca = (from x in instituicao.Criancas
+                           select x)
+                           .FirstOrDefault(x => x.Id == id);
+
+            var result = this.CriancaParaCriancaDto(crianca);
+            result.InstituicaoId = instituicao.Id;
+            return result;
+        }
+
+        public IEnumerable<CartinhaDto> ObterCartinha(Guid idCrianca)
+        {
+            var crianca = this.CriancaRepository.GetById(idCrianca);
+
+            if (crianca == null)
+                throw new Exception("Criança não encontrada");
+
+            var result = new List<CartinhaDto>();
+
+            foreach (var item in crianca.Cartinhas)
+            {
+                result.Add(this.CartinhaParaCartinhaDto(item));
+            }
+            return result;
+        }
+
+        public CartinhaDto ObterCartinhaPorId(Guid idCrianca, Guid id)
+        {
+            var crianca = this.CriancaRepository.GetById(idCrianca);
+
+            if (crianca == null)
+                throw new Exception("Criança não encontrada");
+
+            var cartinha = (from x in  crianca.Cartinhas
+                            select x)
+                            .FirstOrDefault(x => x.Id == id);
+
+            var result = this.CartinhaParaCartinhaDto(cartinha);
+            result.CriancaId = crianca.Id;
+
+            return result;
+        }
 
         private Instituicao InstituicaoDtoParaInstituicao(InstituicaoDto dto)
         {
