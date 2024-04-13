@@ -11,8 +11,8 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
         public Guid Id { get; set; }
         public string Nome { get; set; }
         public bool Ativo { get; set; }
-        public Diretor Diretor { get; set; }
-        public List<Crianca> Criancas { get; set; } = new List<Crianca>();
+        public virtual Diretor Diretor { get; set; }
+        public virtual IList<Crianca> Criancas { get; set; } = new List<Crianca>();
 
         public Instituicao()
         {

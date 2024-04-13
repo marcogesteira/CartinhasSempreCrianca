@@ -12,9 +12,9 @@ namespace CartinhasSempreCrianca.Domain.Apadrinhamento
         public Guid Id { get; set; }
         public DateTime Data { get; set; }
         public DateTime Prazo { get; set; }
-        public Usuario Padrinho { get; set; }
-        public List<Cartinha.Cartinha> Cartinhas { get; set; } = new List<Cartinha.Cartinha>();
-        public List<LocalDeRecolhimento> LocaisDeRecolhimento { get; set; } = new List<LocalDeRecolhimento>();
+        public virtual Usuario Padrinho { get; set; }
+        public virtual IList<Cartinha.Cartinha> Cartinhas { get; set; } = new List<Cartinha.Cartinha>();
+        public virtual IList<LocalDeRecolhimento> LocaisDeRecolhimento { get; set; } = new List<LocalDeRecolhimento>();
 
         //public Apadrinhamento()
         //{

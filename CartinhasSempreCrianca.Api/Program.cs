@@ -14,7 +14,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<CartinhasSempreCriancaContext>(c =>
 {
-    c.UseSqlServer(builder.Configuration.GetConnectionString("CartinhasConnection"));
+    c.UseLazyLoadingProxies()
+    .UseSqlServer(builder.Configuration.GetConnectionString("CartinhasConnection"));
 
 });
 

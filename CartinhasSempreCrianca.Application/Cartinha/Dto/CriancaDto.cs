@@ -10,6 +10,7 @@ namespace CartinhasSempreCrianca.Application.Cartinha.Dto
     public class CriancaDto
     {
         public Guid Id { get; set; }
+        public Guid InstituicaoId { get; set; }
         [Required]
         public string Nome { get; set; }
         [Required]

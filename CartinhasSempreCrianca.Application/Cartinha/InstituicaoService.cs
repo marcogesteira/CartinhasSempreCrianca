@@ -22,6 +22,68 @@ namespace CartinhasSempreCrianca.Application.Cartinha
             CartinhaRepository = cartinhaRepository;
         }
 
+        public InstituicaoDto Criar(InstituicaoDto instituicaoDto)
+        {
+            Instituicao instituicao = this.InstituicaoDtoParaInstituicao(instituicaoDto);
+            this.InstituicaoRepository.Save(instituicao);
+
+            return this.InstituicaoParaInstituicaoDto(instituicao);
+        }
+
+        public InstituicaoDto Obter(Guid id)
+        {
+            var instituicao = this.InstituicaoRepository.GetById(id);
+            return this.InstituicaoParaInstituicaoDto(instituicao);
+        }
+
+        public IEnumerable<InstituicaoDto> Obter()
+        {
+            var instituicao = this.InstituicaoRepository.GetAll();
+            List<InstituicaoDto> dto = new List<InstituicaoDto>();
+
+            foreach (var item in instituicao)
+            {
+                dto.Add(this.InstituicaoParaInstituicaoDto(item));
+            }
+
+            return dto;
+        }
+
+        public CriancaDto AssociarCrianca(CriancaDto dto)
+        {
+            var instituicao = this.InstituicaoRepository.GetById(dto.InstituicaoId);
+
+            if (instituicao == null)
+                throw new Exception("Instituição não encontrada");
+
+            var novaCrianca = this.CriancaDtoParaCrianca(dto);
+
+            instituicao.AdicionarCrianca(novaCrianca);
+
+            this.InstituicaoRepository.Update(instituicao);
+
+            var result = this.CriancaParaCriancaDto(novaCrianca);
+
+            return result;
+        }
+
+        public CartinhaDto AssociarCartinha(CartinhaDto dto)
+        {
+            var crianca = this.CriancaRepository.GetById(dto.CriancaId);
+
+            if (crianca == null)
+                throw new Exception("Criança não encontrada");
+
+            var novaCartinha = this.CartinhaDtoParaCartinha(dto);
+
+            crianca.AdicionarCartinha(novaCartinha);
+
+            this.CriancaRepository.Update(crianca);
+
+            var result = this.CartinhaParaCartinhaDto(novaCartinha);
+
+            return result;
+        }
 
 
         private Instituicao InstituicaoDtoParaInstituicao(InstituicaoDto dto)
@@ -75,7 +137,7 @@ namespace CartinhasSempreCrianca.Application.Cartinha
                 Email = dto.Email,
                 Telefone = dto.Telefone,
             };
-            
+
             return diretor;
         }
 
@@ -88,7 +150,7 @@ namespace CartinhasSempreCrianca.Application.Cartinha
                 Email = diretor.Email,
                 Telefone = diretor.Telefone,
             };
-            
+
             return dto;
         }
 
@@ -123,7 +185,7 @@ namespace CartinhasSempreCrianca.Application.Cartinha
             dto.Nome = crianca.Nome;
             dto.Idade = crianca.Idade;
             dto.Ativo = crianca.Ativo;
-            
+
             foreach (var item in crianca.Cartinhas)
             {
                 var cartinhaDto = new CartinhaDto()
@@ -169,3 +231,4 @@ namespace CartinhasSempreCrianca.Application.Cartinha
             return dto;
         }
     }
+}

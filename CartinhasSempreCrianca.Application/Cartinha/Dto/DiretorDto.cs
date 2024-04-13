@@ -15,6 +15,7 @@ namespace CartinhasSempreCrianca.Application.Cartinha.Dto
         [Required]
         public string Telefone { get; set; }
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
     }
 }
