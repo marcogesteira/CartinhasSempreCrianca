@@ -17,7 +17,7 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
 
         public Cartinha()
         {
-            
+
         }
 
         public Cartinha(string pedido, int numero, DateTime ano, string desenho)
@@ -27,7 +27,7 @@ namespace CartinhasSempreCrianca.Domain.Cartinha
             Numero = numero;
             Ano = ano;
             Desenho = desenho;
-            
+
         }
     }
 }

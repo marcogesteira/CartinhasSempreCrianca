@@ -21,4 +21,8 @@
     <ProjectReference Include="..\CartinhasSempreCrianca.Repository\CartinhasSempreCrianca.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

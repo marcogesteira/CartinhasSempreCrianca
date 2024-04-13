@@ -19,10 +19,12 @@ builder.Services.AddDbContext<CartinhasSempreCriancaContext>(c =>
 });
 
 //Repositories
+builder.Services.AddScoped<InstituicaoRepository>();
+builder.Services.AddScoped<CriancaRepository>();
 builder.Services.AddScoped<CartinhaRepository>();
 
 //Services
-builder.Services.AddScoped<CartinhaService>();
+builder.Services.AddScoped<InstituicaoService>();
 
 var app = builder.Build();
 
